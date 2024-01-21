@@ -8,7 +8,6 @@ const userRoutes = require("./router/userRoutes");
 const connectDb = require("./utils/db");
 const errorMiddleware = require("./middlewares/error-middleware");
 const TransactionsRoute = require("./router/Transactions-router");
-const bodyParser = require('body-parser');
 const swaggerDocument = require('./swagger.json');
 
 
@@ -24,8 +23,8 @@ app.use(express.json());
 app.use(errorMiddleware);
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
 app.use("/api", userRoutes);
 app.use("/api", TransactionsRoute);
 
